@@ -11,29 +11,27 @@
 
 <body>
   <div class="calculator">
-    <div class="calculator-screen">
-      <p>1 + 2 = 3</p>
-    </div>
+    <input type="text" class="calculator-screen" value="" disabled />
     <div class="calculator-btns">
-      <button id="all-clear">AC</button>
+      <button id="all-clear" class="all-clear" value="all-clear">AC</button>
       <button id="delete">C</button>
-      <button id="remainder">%</button>
-      <button id="divide">&#247</button>
-      <button id="digit-7">7</button>
-      <button id="digit-8">8</button>
-      <button id="digit-9">9</button>
-      <button id="plus">+</button>
-      <button id="digit-4">4</button>
-      <button id="digit-5">5</button>
-      <button id="digit-6">6</button>
-      <button id="minus">-</button>
-      <button id="digit-1">1</button>
-      <button id="digit-2">2</button>
-      <button id="digit-3">3</button>
-      <button id="multiply">x</button>
-      <button id="digit-0">0</button>
-      <button id="decimal">.</button>
-      <button id="equals">=</button>
+      <button id="remainder" class="operator">%</button>
+      <button id="divide" class="operator" value="&divide">&#247</button>
+      <button id="digit-7" value="7">7</button>
+      <button id="digit-8" value="8">8</button>
+      <button id="digit-9" value="9">9</button>
+      <button id="plus" class="operator" value="+">+</button>
+      <button id="digit-4" value="4">4</button>
+      <button id="digit-5" value="5">5</button>
+      <button id="digit-6" value="6">6</button>
+      <button id="minus" class="operator" value="-">-</button>
+      <button id="digit-1" value="1">1</button>
+      <button id="digit-2" value="2">2</button>
+      <button id="digit-3" value="3">3</button>
+      <button id="multiply" class="operator" value="x">x</button>
+      <button id="digit-0" value="0">0</button>
+      <button id="decimal" class="decimal" value=".">.</button>
+      <button id="equals" class="equal-sign operator" value="=">=</button>
     </div>
   </div>
   <script src="app.js"></script>
