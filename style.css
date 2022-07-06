@@ -43,6 +43,7 @@ button {
   border-radius: 50%;
   background-color: rgb(153, 153, 153);
   color: #fff;
+  transition: background-color 0.2s;
 }
 
 #equals {
@@ -51,19 +52,35 @@ button {
 }
 
 button:hover {
-  background-color: burlywood;
+  background-color: #deb887;
   transform: translateY(-0.1em);
 }
 
 .operator:hover {
-  background-color: lightblue;
+  background-color: #add8e6;
 }
 
 #equals:hover {
-  background-color: limegreen;
+  background-color: #32cd32;
 }
 
 #all-clear:hover,
 #delete:hover {
-  background-color: crimson;
+  background-color: #dc143c;
+}
+
+.active-digit {
+  background-color: #deb887;
+}
+
+.active-operator {
+  background-color: #add8e6;
+}
+
+.active-equals {
+  background-color: #32cd32;
+}
+
+.active-delete {
+  background-color: #dc143c;
 }

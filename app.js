@@ -111,9 +111,52 @@ keys.addEventListener('click', event => {
 
 // Keyboard support
 document.addEventListener('keyup', event => {
+  console.log(event);
   const { key } = event;
+  console.log(key);
   handleEvent(key);
+  keyColor(key);
 });
+
+
+function keyColor(key) {
+  switch (key) {
+    case '.':
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
+      document.getElementById(`digit-${key}`).classList.add('active-digit');
+      setTimeout(function () { document.getElementById(`digit-${key}`).classList.remove('active-digit') }, 200);
+      break;
+    case '+':
+    case '-':
+    case '*':
+    case '/':
+    case '%':
+      document.getElementById(`btn-${key}`).classList.add('active-operator');
+      setTimeout(function () { document.getElementById(`btn-${key}`).classList.remove('active-operator') }, 200);
+      break;
+    case 'Enter':
+      document.getElementById(`equals`).classList.add('active-equals');
+      setTimeout(function () { document.getElementById(`equals`).classList.remove('active-equals') }, 200);
+      break;
+    case 'Delete':
+      document.getElementById(`delete-all`).classList.add('active-delete');
+      setTimeout(function () { document.getElementById(`delete-all`).classList.remove('active-delete') }, 200);
+      break;
+    case 'Backspace':
+      document.getElementById(`delete`).classList.add('active-delete');
+      setTimeout(function () { document.getElementById(`delete`).classList.remove('active-delete') }, 200);
+      break;
+  };
+};
 
 
 function handleEvent(value) {
