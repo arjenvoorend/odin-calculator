@@ -78,14 +78,14 @@ function calculate(firstOperand, secondOperand, operator) {
     return firstOperand + secondOperand;
   } else if (operator === '-') {
     return firstOperand - secondOperand;
-  } else if (operator === 'x') {
+  } else if (operator === '*') {
     return firstOperand * secondOperand;
   } else if (operator === '/') {
     return firstOperand / secondOperand;
   }
 
   return secondOperand;
-}
+};
 
 
 function updateDisplay() {
@@ -97,20 +97,33 @@ function updateDisplay() {
 updateDisplay();
 
 
+// Mouse support
 const keys = document.querySelector('.calculator-btns')
 keys.addEventListener('click', event => {
   const { target } = event;
   const { value } = target;
   if (!target.matches('button')) {
     return;
-  }
+  };
+  handleEvent(value);
+});
 
+
+// Keyboard support
+document.addEventListener('keyup', event => {
+  const { key } = event;
+  handleEvent(key);
+});
+
+
+function handleEvent(value) {
   switch (value) {
     case '+':
     case '-':
-    case 'x':
+    case '*':
     case '/':
     case '=':
+    case 'Enter':
       handleOperator(value);
       break;
     case '.':
@@ -127,4 +140,4 @@ keys.addEventListener('click', event => {
   }
 
   updateDisplay();
-});
+};
