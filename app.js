@@ -111,7 +111,6 @@ keys.addEventListener('click', event => {
 
 // Keyboard support
 document.addEventListener('keyup', event => {
-  console.log(event);
   const { key } = event;
   console.log(key);
   handleEvent(key);
@@ -148,8 +147,8 @@ function keyColor(key) {
       setTimeout(function () { document.getElementById(`equals`).classList.remove('active-equals') }, 200);
       break;
     case 'Delete':
-      document.getElementById(`delete-all`).classList.add('active-delete');
-      setTimeout(function () { document.getElementById(`delete-all`).classList.remove('active-delete') }, 200);
+      document.getElementById(`all-clear`).classList.add('active-delete');
+      setTimeout(function () { document.getElementById(`all-clear`).classList.remove('active-delete') }, 200);
       break;
     case 'Backspace':
       document.getElementById(`delete`).classList.add('active-delete');
@@ -173,6 +172,7 @@ function handleEvent(value) {
       inputDecimal(value);
       break;
     case 'all-clear':
+    case 'Delete':
       resetCalculator();
       break;
     default:
