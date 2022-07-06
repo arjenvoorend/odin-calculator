@@ -65,7 +65,7 @@ button:hover {
 }
 
 #all-clear:hover,
-#delete:hover {
+#backspace:hover {
   background-color: #dc143c;
 }
 
