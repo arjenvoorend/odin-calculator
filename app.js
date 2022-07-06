@@ -92,6 +92,8 @@ function calculate(firstOperand, secondOperand, operator) {
     return firstOperand * secondOperand;
   } else if (operator === '/') {
     return firstOperand / secondOperand;
+  } else if (operator === '%') {
+    return firstOperand % secondOperand;
   }
 
   return secondOperand;
@@ -175,6 +177,7 @@ function handleEvent(value) {
     case '-':
     case '*':
     case '/':
+    case '%':
     case '=':
     case 'Enter':
       handleOperator(value);
