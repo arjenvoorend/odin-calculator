@@ -54,3 +54,16 @@ button:hover {
   background-color: burlywood;
   transform: translateY(-0.1em);
 }
+
+.operator:hover {
+  background-color: lightblue;
+}
+
+#equals:hover {
+  background-color: limegreen;
+}
+
+#all-clear:hover,
+#delete:hover {
+  background-color: crimson;
+}
