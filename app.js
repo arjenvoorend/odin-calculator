@@ -62,7 +62,8 @@ function handleOperator(nextOperator) {
   calculator.waitingForSecondOperand = true;
   calculator.operator = nextOperator;
   console.log(calculator);
-}
+};
+
 
 function resetCalculator() {
   calculator.displayValue = '0';
@@ -70,7 +71,16 @@ function resetCalculator() {
   calculator.waitingForSecondOperand = false;
   calculator.operator = null;
   console.log(calculator);
-}
+};
+
+
+function backspaceCalculator() {
+  calculator.displayValue = calculator.displayValue.slice(0, -1);
+
+  if (calculator.displayValue.length === 0) {
+    calculator.displayValue = '0'
+  };
+};
 
 
 function calculate(firstOperand, secondOperand, operator) {
@@ -101,6 +111,7 @@ updateDisplay();
 const keys = document.querySelector('.calculator-btns')
 keys.addEventListener('click', event => {
   const { target } = event;
+  console.log(target);
   const { value } = target;
   if (!target.matches('button')) {
     return;
@@ -151,8 +162,8 @@ function keyColor(key) {
       setTimeout(function () { document.getElementById(`all-clear`).classList.remove('active-delete') }, 200);
       break;
     case 'Backspace':
-      document.getElementById(`delete`).classList.add('active-delete');
-      setTimeout(function () { document.getElementById(`delete`).classList.remove('active-delete') }, 200);
+      document.getElementById(`backspace`).classList.add('active-delete');
+      setTimeout(function () { document.getElementById(`backspace`).classList.remove('active-delete') }, 200);
       break;
   };
 };
@@ -175,12 +186,16 @@ function handleEvent(value) {
     case 'Delete':
       resetCalculator();
       break;
+    case 'Backspace':
+    case 'backspace':
+      backspaceCalculator();
+      break;
     default:
       // check if the key is an integer
       if (Number.isInteger(parseFloat(value))) {
         inputDigit(value);
-      }
-  }
+      };
+  };
 
   updateDisplay();
 };
