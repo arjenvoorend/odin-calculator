@@ -15,7 +15,6 @@ function inputDigit(digit) {
   } else {
     // Overwrite `displayValue` if the current value is '0' otherwise append to it
     calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
-    console.log(calculator);
   }
 }
 
@@ -44,7 +43,6 @@ function handleOperator(nextOperator) {
 
   if (operator && calculator.waitingForSecondOperand) {
     calculator.operator = nextOperator;
-    console.log(calculator);
     return;
   }
   // verify that `firstOperand` is null and that the `inputValue`
@@ -61,7 +59,6 @@ function handleOperator(nextOperator) {
 
   calculator.waitingForSecondOperand = true;
   calculator.operator = nextOperator;
-  console.log(calculator);
 };
 
 
@@ -70,7 +67,6 @@ function resetCalculator() {
   calculator.firstOperand = null;
   calculator.waitingForSecondOperand = false;
   calculator.operator = null;
-  console.log(calculator);
 };
 
 
@@ -113,7 +109,6 @@ updateDisplay();
 const keys = document.querySelector('.calculator-btns')
 keys.addEventListener('click', event => {
   const { target } = event;
-  console.log(target);
   const { value } = target;
   if (!target.matches('button')) {
     return;
@@ -125,7 +120,6 @@ keys.addEventListener('click', event => {
 // Keyboard support
 document.addEventListener('keyup', event => {
   const { key } = event;
-  console.log(key);
   handleEvent(key);
   keyColor(key);
 });
